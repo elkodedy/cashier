@@ -16,6 +16,9 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('cashier/V_home');
+		// $this->load->view('cashier/V_home');
+
+		$pages['page'] = "views/templates/v_404.php";
+		$this->load->view('cashier/V_home', $pages);
 	}
 }

@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin - Dashboard</title>
+  <title>Apotik Jago - Admin</title>
 
   <!-- Custom fonts for this template-->
   <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
@@ -36,9 +36,10 @@
 
 <body id="page-top">
 
+  <!-- Nav -->
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="index.html">Hai, <?php echo $this->session->userdata("name"); ?></a>
+    <a class="navbar-brand mr-1" href="#">Hai, <?php echo $this->session->userdata("name"); ?></a>
 
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
@@ -90,66 +91,53 @@
           <a class="dropdown-item" href="#">Settings</a>
           <a class="dropdown-item" href="#">Activity Log</a>
           <div class="dropdown-divider"></div>
-          <a link="" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
         </div>
       </li>
     </ul>
-
   </nav>
+  <!-- /.Nav -->
 
   <div id="wrapper">
-
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url('/admin/home'); ?>">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span>
         </a>
       </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Transaksi Penjualan</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
-      </li> -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-money-bill-wave"></i>
-          <span>Transaksi Penjualan</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-chart-area"></i>
-          <span>Transaksi Pembelian</span></a>
+          <span>Kasir</span>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-table"></i>
-          <span>Stok Obats</span></a>
+          <span>Data Transaksi</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('/admin/stock')?>">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Stok Barang</span>
+        </a>
       </li>
     </ul>
+    <!-- /.Sidebar -->
 
     <div id="content-wrapper">
-
       <div class="container-fluid">
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
+
+        <!-- My Work Space -->
+        <?php 
+          include APPPATH.$page;
+        
+        ?>
+        <!-- /.My Work Space -->
+        
       </div>
       <!-- /.container-fluid -->
 
@@ -157,7 +145,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Proudly Created By Lobster Teknik-UHO 2019 </span>
+            <span>Copyright © Your Website 2019</span>
           </div>
         </div>
       </footer>
@@ -178,38 +166,19 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Yakin ingin keluar?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Pilih logout jika anda siap untuk meniggalkan sesi anda!</div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="<?php echo site_url('/login/logout')?>">Logout</a>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-
-  <!-- Core plugin JavaScript-->
-  <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-
-  <!-- Page level plugin JavaScript-->
-  <!-- <script src="vendor/chart.js/Chart.min.js"></script> -->
-  <!-- <script src="vendor/datatables/jquery.dataTables.js"></script> -->
-  <!-- <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
-
-  <!-- Custom scripts for all pages-->
-  <!-- <script src="js/sb-admin.min.js"></script> -->
-
-  <!-- Demo scripts for this page-->
-  <!-- <script src="js/demo/datatables-demo.js"></script> -->
-  <!-- <script src="js/demo/chart-area-demo.js"></script> -->
 
   <!-- Bootstrap core JavaScript-->
   <script src="<?php echo base_url('assets/jquery/jquery.min.js') ?>"></script>
