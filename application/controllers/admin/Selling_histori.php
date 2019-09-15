@@ -1,23 +1,19 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Selling_histori extends CI_Controller {
     
     public function __construct()
     {
 		parent::__construct();
-		if($this->session->userdata('status') != "login"){
-			redirect("/home/login");
-		}
-		if($this->session->userdata('group') != "1"){
-			redirect("/home/login");
-		}
+		$this->load->model('admin/M_selling_histori');
 	}
 
 	public function index()
 	{
+		$data['selling_histori'] = $this->M_selling_histori->displayrecords();
 		$this->load->view('admin/V_header');
-		$this->load->view('templates/V_404');
+		$this->load->view('admin/V_selling_histori', $data);
 		$this->load->view('admin/V_footer');
 	}
 }

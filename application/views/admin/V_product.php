@@ -3,14 +3,14 @@
           <li class="breadcrumb-item">
             <a href="#">Admin</a>
           </li>
-          <li class="breadcrumb-item active">Stok Obat</li>
+          <li class="breadcrumb-item active">Produk</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Stok Obat
+            Produk
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -19,10 +19,10 @@
                   <tr>
                     <th>No</th>
                     <th>Id</th>
-                    <th>Nama Obat</th>
-                    <th>Stok Gudang</th>
-                    <th>Terjual</th>
-                    <th>Kadaluarsa/Rusak</th>
+                    <th>Nama Produk</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
+                    <th>Category</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
@@ -31,21 +31,21 @@
                     <th>No</th>
                     <th>Id</th>
                     <th>Nama Produk</th>
-                    <th>Stok Gudang</th>
-                    <th>Terjual</th>
-                    <th>Kadaluarsa/Rusak</th>
+                    <th>Harga Beli</th>
+                    <th>Harga Jual</th>
+                    <th>Category</th>
                     <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1; foreach($stock as $row){ ?>
+                  <?php $i=1; foreach($product as $row){ ?>
                     <tr>
                       <td width="5%"><?php echo $i?></td>
                       <td><?php echo $row->medicine_id;?></td>
                       <td><?php echo $row->medicine_name;?></td>
-                      <td><?php echo $row->stock;?></td>
-                      <td><?php echo $row->sold;?></td>
-                      <td><?php echo $row->expired;?></td>
+                      <td><?php echo $row->single_purchase_price;?></td>
+                      <td><?php echo $row->single_selling_price;?></td>
+                      <td><?php echo $row->category_name;?></td>
                       <td width="10%">
                         <div>
                           <a class="btn btn-primary" href=""><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
@@ -56,9 +56,11 @@
                   <?php $i++; } ?>
                 </tbody>
               </table>
+              <div class="float-right pt-3">
+                <a class="btn btn-primary" href=""><i class='fa fa-plus-circle'></i> Tambah</a>
+              </div>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
-        

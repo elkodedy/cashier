@@ -11,7 +11,9 @@ class Stock extends CI_Controller {
 
 	public function index()
 	{
-		$pages['page'] = "views/admin/v_stock.php";
-		$this->load->view('admin/V_home', $pages);
+		$data['stock'] = $this->M_stock->displayrecords();
+		$this->load->view('admin/V_header');
+		$this->load->view('admin/V_stock', $data);
+		$this->load->view('admin/V_footer');
 	}
 }

@@ -98,104 +98,82 @@
   </nav>
   <!-- /.Nav -->
 
+
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item dropdown no-arrow">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
+          <i class="fas fa-user-circle fa-3x"></i>
+          <span>Administrator</span>
         </a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item" id="">
+        <hr noshade width="90%">
+        <!-- <h6 class="dropdown-header">Other Pages:</h6> -->
+      </li>
+      <li class="nav-item active" id="">
         <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Kasir</span>
+          <i class="fas fa-fw fa-home"></i>
+          <span>Beranda</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Data Transaksi</span>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="<?php echo site_url('/admin/user')?>">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Pengguna</span>
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('/admin/stock')?>">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Stok Barang</span>
+      <li class="nav-item" id="">
+        <a class="nav-link" href="<?php echo site_url('/admin/supplier')?>">
+          <i class="fas fa-fw fa-handshake"></i>
+          <span>Penyedia</span>
         </a>
+      </li>
+      <li class="nav-item" id="">
+        <hr noshade width="90%">
+        <!-- <h6 class="dropdown-header">Transaksi :</h6> -->
+      </li>
+      <li class="nav-item" id="purchase">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-shopping-cart"></i>
+          <span>Pembelian</span>
+        </a>
+      </li>
+      <li class="nav-item" id="">
+        <hr noshade width="90%">
+        <!-- <h2 class="dropdown-header align-center">Laporan :</h2> -->
+      </li>
+      <li class="nav-item" id="product">
+        <a class="nav-link" href="<?php echo site_url('/admin/product')?>">
+          <i class="fas fa-fw fa-archive"></i>
+          <span>Produk</span>
+        </a>
+      </li>
+      <li class="nav-item" id="stock">
+        <a class="nav-link"  href="<?php echo site_url('/admin/stock')?>">
+          <i class="fas fa-fw fa-warehouse"></i>
+          <span>Stok Produk</span>
+        </a>
+      </li>
+      <li class="nav-item" id="finance">
+        <a class="nav-link" href="#">
+          <i class="fas fa-fw fa-money-bill-wave"></i>
+          <span>Keuangan</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown" id="history">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-history"></i>
+          <span>Riwayat</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+          <a class="dropdown-item" href="<?php echo site_url('/admin/purchase_histori')?>">Pembelian</a>
+          <a class="dropdown-item" href="<?php echo site_url('/admin/selling_histori')?>">Penjualan</a>
+        </div>
       </li>
     </ul>
     <!-- /.Sidebar -->
 
     <div id="content-wrapper">
       <div class="container-fluid">
-
-        <!-- My Work Space -->
-        <?php 
-          // include APPPATH.$page;
-        
-        ?>
-        <!-- /.My Work Space -->
-        
-      </div>
-      <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
-
-    </div>
-    <!-- /.content-wrapper -->
-
-  </div>
-  <!-- /#wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?php echo site_url('/login/logout')?>">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?php echo base_url('assets/jquery/jquery.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="<?php echo base_url('assets/jquery-easing/jquery.easing.min.js') ?>"></script>
-  <!-- Page level plugin JavaScript-->
-  <script src="<?php echo base_url('assets/chart.js/Chart.min.js') ?>"></script>
-  <script src="<?php echo base_url('assets/datatables/jquery.dataTables.js') ?>"></script>
-  <script src="<?php echo base_url('assets/datatables/dataTables.bootstrap4.js') ?>"></script>
-  <!-- Custom scripts for all pages-->
-  <script src="<?php echo base_url('assets/js/sb-admin.min.js') ?>"></script>
-  <!-- Demo scripts for this page-->
-  <script src="<?php echo base_url('assets/js/demo/datatables-demo.js') ?>"></script>
-  <script src="<?php echo base_url('assets/js/demo/chart-area-demo.js') ?>"></script>
-
-</body>
-
-</html>

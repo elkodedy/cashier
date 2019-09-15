@@ -3,14 +3,14 @@
           <li class="breadcrumb-item">
             <a href="#">Admin</a>
           </li>
-          <li class="breadcrumb-item active">Stok Obat</li>
+          <li class="breadcrumb-item active">Riwayat Pembelian</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Stok Obat
+            Riwayat Pembelian
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -18,38 +18,37 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Id</th>
-                    <th>Nama Obat</th>
-                    <th>Stok Gudang</th>
-                    <th>Terjual</th>
-                    <th>Kadaluarsa/Rusak</th>
+                    <th>Id Transaksi</th>
+                    <th>Nama Pengguna</th>
+                    <th>Supplier</th>
+                    <th>Tanggal</th>
+                    <th>Total Harga</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
                     <th>No</th>
-                    <th>Id</th>
-                    <th>Nama Produk</th>
-                    <th>Stok Gudang</th>
-                    <th>Terjual</th>
-                    <th>Kadaluarsa/Rusak</th>
+                    <th>Id Transaksi</th>
+                    <th>Nama Pengguna</th>
+                    <th>Supplier</th>
+                    <th>Tanggal</th>
+                    <th>Total Harga</th>
                     <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1; foreach($stock as $row){ ?>
+                  <?php $i=1; foreach($purchase_histori as $row){ ?>
                     <tr>
                       <td width="5%"><?php echo $i?></td>
-                      <td><?php echo $row->medicine_id;?></td>
-                      <td><?php echo $row->medicine_name;?></td>
-                      <td><?php echo $row->stock;?></td>
-                      <td><?php echo $row->sold;?></td>
-                      <td><?php echo $row->expired;?></td>
-                      <td width="10%">
-                        <div>
+                      <td><?php echo $row->purchase_transaction_id;?></td>
+                      <td><?php echo $row->name;?></td>
+                      <td><?php echo $row->supplier_name;?></td>
+                      <td><?php echo date("Y-m-d",$row->date)?></td>
+                      <td><?php echo $row->total_price;?></td>
+                      <td>
+                        <div width="10%">
                           <a class="btn btn-primary" href=""><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
-                          <a class="btn btn-warning" href=""><abbr title='Edit'><i class='fa fa-edit'></i></abbr></a>
                         </div>
                       </td>
                     </tr>
