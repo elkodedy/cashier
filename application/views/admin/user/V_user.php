@@ -17,22 +17,22 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Id</th>
+                    <!-- <th>No</!-->
+                    <th>Nomor Registrasi</th>
                     <th>Nama</th>
-                    <th>No. Telp</th>
                     <th>Grup</th>
+                    <th>No. Telp</th>
                     <th>Status</th>
                     <th>Aksi</th>
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>No</th>
-                    <th>Id</th>
+                    <!-- <th>No</th> -->
+                    <th>Nomor Registrasi</th>
                     <th>Nama</th>
-                    <th>No. Telp</th>
                     <th>Grup</th>
+                    <th>No. Telp</th>
                     <th>Status</th>
                     <th>Aksi</th>
                   </tr>
@@ -40,16 +40,16 @@
                 <tbody>
                   <?php $i=1; foreach($user as $row){ ?>
                     <tr>
-                      <td width="5%"><?php echo $i?></td>
-                      <td><?php echo $row->user_id;?></td>
+                      <!-- <td width="5%"><?php// echo $i?></td> -->
+                      <td><?php echo $row->registration_id;?></td>
                       <td><?php echo $row->name;?></td>
-                      <td><?php echo $row->phone;?></td>
                       <td><?php echo $row->group_name;?></td>
+                      <td><?php echo $row->phone;?></td>
                       <td><?php echo $row->status;?></td>
                       <td width="10%">
                         <div>
-                          <a class="btn btn-primary" href=""><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
-                          <a class="btn btn-warning" href=""><abbr title='Edit'><i class='fa fa-edit'></i></abbr></a>
+                          <a class="btn btn-primary" href="<?php echo site_url("admin/user/user_detail?id=".$row->user_id."")?>"><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
+                          <a class="btn btn-warning" href="<?php echo site_url("admin/user/user_edit?id=".$row->user_id."")?>"><abbr title='Edit'><i class='fa fa-edit'></i></abbr></a>
                         </div>
                       </td>
                     </tr>
@@ -57,11 +57,10 @@
                 </tbody>
               </table>
               <div class="float-right pt-3">
-                <a class="btn btn-primary" href=""><i class='fa fa-plus-circle'></i> Tambah</a>
+                <a class="btn btn-primary" href="<?php echo site_url("admin/user/user_add")?>"><i class='fa fa-plus-circle'></i> Tambah</a>
               </div>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
-
         

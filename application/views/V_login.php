@@ -13,8 +13,6 @@
                         echo '</div>';
                     }?>
                 <!-- Form -->
-                <?php echo form_open("");?>
-
                 <div class="form-group">
                     <label for="exampleInputUsername">Username:</label>
                     <input name="username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp" placeholder="Username">

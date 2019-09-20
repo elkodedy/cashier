@@ -13,7 +13,7 @@ class Supplier extends CI_Controller {
 	{
 		$data['supplier'] = $this->M_supplier->displayrecords();
 		$this->load->view('admin/V_header');
-		$this->load->view('admin/V_supplier', $data);
+		$this->load->view('admin/supplier/V_supplier', $data);
 		$this->load->view('admin/V_footer');
 	}
 }

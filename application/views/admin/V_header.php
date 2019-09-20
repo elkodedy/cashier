@@ -32,6 +32,9 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
 
+  <!-- My Style-->
+  <link href="<?php echo base_url('assets/css/mystyle.css') ?>" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -112,19 +115,19 @@
         <hr noshade width="90%">
         <!-- <h6 class="dropdown-header">Other Pages:</h6> -->
       </li>
-      <li class="nav-item active" id="">
-        <a class="nav-link" href="#">
+      <li class="nav-item <?php if($this->uri->segment(2) == "") echo "active"?>" id="">
+        <a class="nav-link" href="<?php echo site_url('/admin')?>">
           <i class="fas fa-fw fa-home"></i>
           <span>Beranda</span>
         </a>
       </li>
-      <li class="nav-item" id="">
+      <li class="nav-item <?php if($this->uri->segment(2) == "user") echo "active"?>" id="">
         <a class="nav-link" href="<?php echo site_url('/admin/user')?>">
           <i class="fas fa-fw fa-user"></i>
           <span>Pengguna</span>
         </a>
       </li>
-      <li class="nav-item" id="">
+      <li class="nav-item <?php if($this->uri->segment(2) == "supplier") echo "active"?>" id="">
         <a class="nav-link" href="<?php echo site_url('/admin/supplier')?>">
           <i class="fas fa-fw fa-handshake"></i>
           <span>Penyedia</span>
@@ -144,25 +147,25 @@
         <hr noshade width="90%">
         <!-- <h2 class="dropdown-header align-center">Laporan :</h2> -->
       </li>
-      <li class="nav-item" id="product">
+      <li class="nav-item <?php if($this->uri->segment(2) == "product") echo "active"?>" id="product">
         <a class="nav-link" href="<?php echo site_url('/admin/product')?>">
           <i class="fas fa-fw fa-archive"></i>
           <span>Produk</span>
         </a>
       </li>
-      <li class="nav-item" id="stock">
+      <li class="nav-item <?php if($this->uri->segment(2) == "stock") echo "active"?>" id="stock">
         <a class="nav-link"  href="<?php echo site_url('/admin/stock')?>">
           <i class="fas fa-fw fa-warehouse"></i>
           <span>Stok Produk</span>
         </a>
       </li>
-      <li class="nav-item" id="finance">
+      <li class="nav-item <?php if($this->uri->segment(2) == "finance") echo "active"?>" id="finance">
         <a class="nav-link" href="#">
           <i class="fas fa-fw fa-money-bill-wave"></i>
           <span>Keuangan</span>
         </a>
       </li>
-      <li class="nav-item dropdown" id="history">
+      <li class="nav-item dropdown <?php if($this->uri->segment(2) == "purchase_histori" or $this->uri->segment(2) == "selling_histori") echo "active"?>" id="history">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-history"></i>
           <span>Riwayat</span>

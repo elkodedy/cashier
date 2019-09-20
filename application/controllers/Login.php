@@ -20,8 +20,6 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
 		
 		// set message form validation
-		$this->form_validation->set_message('required', '<div class="alert alert-danger" style="margin-top: 3px">
-		<div class="header"><b><i class="fa fa-exclamation-circle"></i> {field}</b> harus diisi</div></div>');
 
 		if ($this->form_validation->run() == TRUE) {
 			$username = $this->input->post('username');
