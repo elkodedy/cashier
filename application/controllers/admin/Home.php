@@ -6,7 +6,7 @@ class Home extends CI_Controller {
     public function __construct()
     {
 		parent::__construct();
-		if($this->session->userdata('status') != "login"){
+		if($this->session->userdata('log') != "login"){
 			redirect("/home/login");
 		}
 		if($this->session->userdata('group') != "1"){
@@ -17,7 +17,7 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('admin/V_header');
-		$this->load->view('templates/V_404');
+		$this->load->view('admin/V_home');
 		$this->load->view('admin/V_footer');
 	}
 }

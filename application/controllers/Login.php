@@ -16,47 +16,49 @@ class Login extends CI_Controller {
 	
 
 	function aksi_login(){
+		// set username and password required
         $this->form_validation->set_rules('username', 'username', 'required');
 		$this->form_validation->set_rules('password', 'password', 'trim|required');
 		
 		// set message form validation
 
-		if ($this->form_validation->run() == TRUE) {
+		if ($this->form_validation->run() == TRUE) { //if username password not empty
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
 			$where = array(
 				'username' => $username,
 				'password' => md5($password)
 				);
-			$cek = $this->M_login->cek_login("table_users", $where)->num_rows();
-			// $user = $this->M_login->cek_login("table_users", $where)->result_array();
-			
+
+			$cek = $this->M_login->cek_login("table_users", $where)->num_rows(); // get user from database
 			foreach ($this->M_login->cek_login("table_users", $where)->result_array() as $user){
 				$group = $user['group_id'];
 				$name = $user['name'];
+				$status = $user['status'];
 			}
-				// echo $row['group_id'];
-			if($cek > 0){
-
+			if($cek > 0){ // if data exist
 				$data_session = array(
 					'username' => $username,
 					'name' => $name,
 					'group' => $group,
-					'status' => "login",
+					'log' => "login",
 					);
-	 
 				$this->session->set_userdata($data_session);
-				// print_r($group['group_id']);
-				if($group == '1'){
-					redirect("/admin/home");
+				// echo $status;break;		
+				if($status == "Aktif"){
+					if($group == '1')
+						redirect("/admin/home");
+					else{
+						redirect("/cashier/home");
+					}
 				}
-				else
-					redirect("/cashier/home");
-	 
+				else{
+					$this->session->set_flashdata('alert', 'Maaf Akun Anda Telah Di Nonaktifkan!!');
+					redirect('home/login', 'refresh');
+				}
 			} 
 			else{
-				$this->session->set_flashdata('alert', 'Username / Password Salah!');
-			// alert("Username atau Password Tidak Cocok");
+				$this->session->set_flashdata('alert', 'Username / Password Tidak Cocok!');
 				redirect('home/login', 'refresh');
 			}
 		}

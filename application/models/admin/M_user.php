@@ -26,4 +26,8 @@
         function user_insert($data){
             $this->db->insert('table_users', $data);
         }
+
+        function user_delete($id){
+            $this->db->delete('table_users', array('user_id' => $id));
+        }
     }

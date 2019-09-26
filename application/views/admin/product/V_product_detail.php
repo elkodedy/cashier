@@ -69,8 +69,8 @@
                 </div>
                 <div class="form-group">
                     <div class="form-group">
-                      <label for="description">Deskripsi</label>
-                      <textarea rows="3" type="text" id="description" class="form-control" placeholder="Deskripsi" disabled value="<?php echo $row->description ?>"><?php echo $row->description ?></textarea>
+                      <label for="medicine_description">Deskripsi</label>
+                      <textarea rows="3" type="text" id="medicine_description" class="form-control" placeholder="Deskripsi" disabled value="<?php echo $row->medicine_description ?>"><?php echo $row->medicine_description ?></textarea>
                     </div>
                 </div>
                 <div class="form-group">

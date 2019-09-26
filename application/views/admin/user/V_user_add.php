@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <div class="form-group">
                       <label for="registration_id">Nomor Registrasi</label>
-                      <input type="text" id="user_id" name="registration_id" class="form-control" placeholder="Masukkan Id Pengguna" value="<?php echo ('RI'.time().rand(10,99)) ?>" readonly>
+                      <input type="text" id="registration_id" name="registration_id" class="form-control" placeholder="Masukkan Nomor Registrasi" value="<?php echo ('RI'.time().rand(10,99)) ?>" readonly>
                     </div>
                 </div>
                 <div class="form-group">
@@ -141,5 +141,5 @@
               </form>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted">Data pengguna siap digunakan setelah pendaftaran selesai</div>
         </div>

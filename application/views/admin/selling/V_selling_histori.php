@@ -3,24 +3,23 @@
           <li class="breadcrumb-item">
             <a href="#">Admin</a>
           </li>
-          <li class="breadcrumb-item active">Riwayat Pembelian</li>
+          <li class="breadcrumb-item active">Riwayat Penjualan</li>
         </ol>
 
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            Riwayat Pembelian
+            Riwayat Penjualan
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>No</th>
-                    <th>Id Transaksi</th>
+                    <!-- <th>No</th> -->
+                    <th>No Transaksi</th>
                     <th>Nama Pengguna</th>
-                    <th>Supplier</th>
                     <th>Tanggal</th>
                     <th>Total Harga</th>
                     <th>Aksi</th>
@@ -28,27 +27,25 @@
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>No</th>
+                    <!-- <th>No</th> -->
                     <th>Id Transaksi</th>
                     <th>Nama Pengguna</th>
-                    <th>Supplier</th>
                     <th>Tanggal</th>
                     <th>Total Harga</th>
                     <th>Aksi</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1; foreach($purchase_histori as $row){ ?>
+                  <?php $i=1; foreach($selling_histori as $row){ ?>
                     <tr>
-                      <td width="5%"><?php echo $i?></td>
-                      <td><?php echo $row->purchase_transaction_id;?></td>
+                      <!-- <td width="5%"><?php echo $i?></td> -->
+                      <td><?php echo $row->selling_transaction_number;?></td>
                       <td><?php echo $row->name;?></td>
-                      <td><?php echo $row->supplier_name;?></td>
                       <td><?php echo date("Y-m-d",$row->date)?></td>
                       <td><?php echo $row->total_price;?></td>
-                      <td>
-                        <div width="10%">
-                          <a class="btn btn-primary" href=""><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
+                      <td width="10%">
+                        <div>
+                          <a class="btn btn-primary" href="<?php echo site_url("admin/selling_histori/selling_histori_detail?id=".$row->selling_transaction_id."")?>"><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
                         </div>
                       </td>
                     </tr>

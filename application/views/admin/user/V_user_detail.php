@@ -19,14 +19,14 @@
               <form>
                 <div class="form-group">
                     <div class="form-group">
-                    <label for="registration_id">Nomor Registrasi</label>
-                    <input type="text" id="user_id" name="registration_id" class="form-control" placeholder="Masukkan Id Pengguna" value="<?php echo $row->registration_id ?>" readonly>
+                      <label for="registration_id">Nomor Registrasi</label>
+                      <input type="text" id="user_id" name="registration_id" class="form-control" placeholder="Masukkan Id Pengguna" value="<?php echo $row->registration_id ?>" readonly>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input type="name" id="id" class="form-control" placeholder="Nama" disabled value="<?php echo $row->name ?>">
+                      <label for="name">Nama</label>
+                      <input type="name" id="id" class="form-control" placeholder="Nama" disabled value="<?php echo $row->name ?>">
                     </div>
                 </div>
                 <div class="form-group">
@@ -76,7 +76,7 @@
               </form>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted">Terakhir di ubah pada <?php echo date("Y-m-d", $row->last_update) ?></div>
         </div>
 
         <!-- password -->
@@ -103,6 +103,6 @@
               </form>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted">Terakhir di ubah pada <?php echo date("Y-m-d", $row->last_update) ?></div>
         </div>
         

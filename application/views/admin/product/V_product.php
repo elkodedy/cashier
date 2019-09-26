@@ -57,7 +57,7 @@
                 </tbody>
               </table>
               <div class="float-right pt-3">
-                <a class="btn btn-primary" href=""><i class='fa fa-plus-circle'></i> Tambah</a>
+                <a class="btn btn-primary" href="<?php echo site_url("admin/product/product_add")?>"><i class='fa fa-plus-circle'></i> Tambah</a>
               </div>
             </div>
           </div>

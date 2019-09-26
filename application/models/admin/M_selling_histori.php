@@ -10,4 +10,14 @@
             $query = $this->db->get();
             return $query->result();
         }
+
+        function display_selling_detail($id){
+            $this->db->select('ts.*, tst.*, tm.*')
+                      ->from('table_selling ts')
+                      ->join('table_selling_transaction tst', 'ts.selling_transaction_id = tst.selling_transaction_id', 'left')
+                      ->join('table_medicine tm', 'ts.medicine_id = tm.medicine_id', 'left')
+                      ->where('ts.selling_transaction_id', $id);
+            $query = $this->db->get();
+            return $query->result();
+        }
     }

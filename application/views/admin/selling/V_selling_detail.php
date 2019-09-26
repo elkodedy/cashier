@@ -13,41 +13,44 @@
             Riwayat Penjualan
           </div>
           <div class="card-body">
+            <table class="table table-borderless">
+							<tr>
+								<td><span>Nomor Transaksi : </span></td>
+								<td><span>Nama Admin : </span></td>
+								<td><span>Tanggal : </span></td>
+							</tr>
+							<tr>
+								<td><h4 class="ml-3 border-bottom">TSX12423121</h4></td>
+								<td><h4 class="ml-3 border-bottom">Sarah Jelek</h4></td>
+								<td><h4 class="ml-3 border-bottom">20/12/2099</h4></td>
+							</tr>
+            </table>
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Id Transaksi</th>
-                    <th>Nama Pengguna</th>
-                    <th>Tanggal</th>
-                    <th>Total Harga</th>
-                    <th>Aksi</th>
+                    <th>Kode Produk</th>
+                    <th>Nama Produk</th>
+                    <th>Jumlah Jual</th>
+                    <th>Harga Jual (Rp)</th>
+                    <!-- <th>Aksi</th> -->
                   </tr>
                 </thead>
                 <tfoot>
                   <tr>
-                    <th>No</th>
-                    <th>Id Transaksi</th>
-                    <th>Nama Pengguna</th>
-                    <th>Tanggal</th>
-                    <th>Total Harga</th>
-                    <th>Aksi</th>
+                    <th colspan="4">Total Harga (Rp)</th>
+                    <th colspan="1">50000,..</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1; foreach($selling_histori as $row){ ?>
+                  <?php $i=1; foreach($sellingid as $row){ ?>
                     <tr>
                       <td width="5%"><?php echo $i?></td>
-                      <td><?php echo $row->selling_transaction_id;?></td>
-                      <td><?php echo $row->name;?></td>
-                      <td><?php echo date("Y-m-d",$row->date)?></td>
-                      <td><?php echo $row->total_price;?></td>
-                      <td width="10%">
-                        <div>
-                          <a class="btn btn-primary" href=""><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
-                        </div>
-                      </td>
+                      <td><?php echo $row->medicine_code;?></td>
+                      <td><?php echo $row->medicine_name;?></td>
+                      <td><?php echo $row->selling_amount?></td>
+                      <td><?php echo $row->price;?></td>
                     </tr>
                   <?php $i++; } ?>
                 </tbody>

@@ -20,7 +20,7 @@
     <link href="<?php echo base_url('assets/css/sb-admin.css') ?>" rel="stylesheet">
 
     <!-- Custom styles for this website-->
-    <link href="<?php echo base_url('assets/css/mystyle.css') ?>" rel="stylesheet">
+    <!-- <link href="<?php// echo base_url('assets/css/mystyle.css') ?>" rel="stylesheet"> -->
 
 </head>
 <body>

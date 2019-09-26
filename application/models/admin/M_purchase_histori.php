@@ -11,4 +11,14 @@
             $query = $this->db->get();
             return $query->result();
         }
+
+        function display_purchase_detail($id){
+            $this->db->select('tp.*, tpt.*, tm.*')
+                      ->from('table_purchase tp')
+                      ->join('table_purchase_transaction tpt', 'tp.purchase_transaction_id = tpt.purchase_transaction_id', 'left')
+                      ->join('table_medicine tm', 'tp.medicine_id = tm.medicine_id', 'left')
+                      ->where('tp.purchase_transaction_id', $id);
+            $query = $this->db->get();
+            return $query->result();
+        }
     }
