@@ -135,17 +135,15 @@
       </li>
       <li class="nav-item" id="">
         <hr noshade width="90%">
-        <!-- <h6 class="dropdown-header">Transaksi :</h6> -->
       </li>
-      <li class="nav-item" id="purchase">
-        <a class="nav-link" href="#">
+      <li class="nav-item <?php if($this->uri->segment(2) == "purchase") echo "active"?>"  id="purchase">
+        <a class="nav-link" href="<?php echo site_url('/admin/purchase')?>">
           <i class="fas fa-fw fa-shopping-cart"></i>
           <span>Pembelian</span>
         </a>
       </li>
       <li class="nav-item" id="">
         <hr noshade width="90%">
-        <!-- <h2 class="dropdown-header align-center">Laporan :</h2> -->
       </li>
       <li class="nav-item <?php if($this->uri->segment(2) == "product") echo "active"?>" id="product">
         <a class="nav-link" href="<?php echo site_url('/admin/product')?>">
@@ -165,14 +163,14 @@
           <span>Keuangan</span>
         </a>
       </li>
-      <li class="nav-item dropdown <?php if($this->uri->segment(2) == "purchase_histori" or $this->uri->segment(2) == "selling_histori") echo "active"?>" id="history">
+      <li class="nav-item dropdown <?php if($this->uri->segment(2) == "purchase_history" or $this->uri->segment(2) == "selling_history") echo "active"?>" id="history">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-history"></i>
           <span>Riwayat</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <a class="dropdown-item" href="<?php echo site_url('/admin/purchase_histori')?>">Pembelian</a>
-          <a class="dropdown-item" href="<?php echo site_url('/admin/selling_histori')?>">Penjualan</a>
+          <a class="dropdown-item" href="<?php echo site_url('/admin/purchase/purchase_history')?>">Pembelian</a>
+          <a class="dropdown-item" href="<?php echo site_url('/admin/selling_history')?>">Penjualan</a>
         </div>
       </li>
     </ul>

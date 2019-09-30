@@ -35,11 +35,13 @@ class Login extends CI_Controller {
 				$group = $user['group_id'];
 				$name = $user['name'];
 				$status = $user['status'];
+				$user_id = $user['user_id'];
 			}
 			if($cek > 0){ // if data exist
 				$data_session = array(
 					'username' => $username,
 					'name' => $name,
+					'user_id' => $user_id,
 					'group' => $group,
 					'log' => "login",
 					);

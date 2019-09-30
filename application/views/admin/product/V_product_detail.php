@@ -69,6 +69,12 @@
                 </div>
                 <div class="form-group">
                     <div class="form-group">
+                      <label for="category_name">Category</label>
+                      <input type="text" id="category_name" class="form-control" placeholder="Categori" disabled value='<?php $caty = $this->M_product->get_category($row->medicine_id);?><?php $j=1; foreach($caty as $cat){ ?>"<?php echo $cat->category_name;?>" <?php $j++; } ?>'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
                       <label for="medicine_description">Deskripsi</label>
                       <textarea rows="3" type="text" id="medicine_description" class="form-control" placeholder="Deskripsi" disabled value="<?php echo $row->medicine_description ?>"><?php echo $row->medicine_description ?></textarea>
                     </div>

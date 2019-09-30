@@ -38,7 +38,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  <?php $i=1; foreach($purchase_histori as $row){ ?>
+                  <?php $i=1; foreach($purchase_history as $row){ ?>
                     <tr>
                       <!-- <td width="5%"><?php echo $i?></td> -->
                       <td><?php echo $row->purchase_transaction_number;?></td>
@@ -48,7 +48,7 @@
                       <td><?php echo $row->total_price;?></td>
                       <td>
                         <div width="10%">
-                          <a class="btn btn-primary" href="<?php echo site_url("admin/purchase_histori/purchase_histori_detail?id=".$row->purchase_transaction_id."")?>"><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
+                          <a class="btn btn-primary" href="<?php echo site_url("admin/purchase/purchase_history_detail?id=".$row->purchase_transaction_id."")?>"><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>
                         </div>
                       </td>
                     </tr>

@@ -18,7 +18,7 @@
                 <thead>
                   <tr>
                     <!-- <th>No</th> -->
-                    <th>Id</th>
+                    <th>Code Produk</th>
                     <th>Nama Obat</th>
                     <th>Stok Gudang</th>
                     <th>Terjual</th>
@@ -29,7 +29,7 @@
                 <tfoot>
                   <tr>
                     <!-- <th>No</th> -->
-                    <th>Id</th>
+                    <th>Code Produk</th>
                     <th>Nama Produk</th>
                     <th>Stok Gudang</th>
                     <th>Terjual</th>
@@ -41,7 +41,7 @@
                   <?php $i=1; foreach($stock as $row){ ?>
                     <tr>
                       <!-- <td width="5%"><?php //echo $i?></td> -->
-                      <td><?php echo $row->medicine_id;?></td>
+                      <td><?php echo $row->medicine_code;?></td>
                       <td><?php echo $row->medicine_name;?></td>
                       <td><?php echo $row->stock;?></td>
                       <td><?php echo $row->sold;?></td>

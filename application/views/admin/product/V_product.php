@@ -18,7 +18,7 @@
                 <thead>
                   <tr>
                     <!-- <th>No</th> -->
-                    <th>Id</th>
+                    <th>Kode Produk</th>
                     <th>Nama Produk</th>
                     <th>Harga Beli</th>
                     <th>Harga Jual</th>
@@ -29,7 +29,7 @@
                 <tfoot>
                   <tr>
                     <!-- <th>No</th> -->
-                    <th>Id</th>
+                    <th>Kode Produk</th>
                     <th>Nama Produk</th>
                     <th>Harga Beli</th>
                     <th>Harga Jual</th>
@@ -41,11 +41,16 @@
                   <?php $i=1; foreach($product as $row){ ?>
                     <tr>
                       <!-- <td width="5%"><?php //echo $i?></td> -->
-                      <td><?php echo $row->medicine_id;?></td>
+                      <td><?php echo $row->medicine_code;?></td>
                       <td><?php echo $row->medicine_name;?></td>
                       <td>Rp. <?php echo $row->single_purchase_price;?></td>
                       <td>Rp. <?php echo $row->single_selling_price;?></td>
-                      <td><?php echo $row->category_name;?></td>
+                      <td>
+                        <?php $caty = $this->M_product->get_category($row->medicine_id);?>
+                        <?php $j=1; foreach($caty as $cat){ ?>
+                          "<?php echo $cat->category_name;?>" 
+                        <?php $j++; } ?>
+                      </td>
                       <td width="10%">
                         <div>
                           <a class="btn btn-primary" href="<?php echo site_url("admin/product/product_detail?id=".$row->medicine_id."")?>"><abbr title='Detail'><i class='fa fa-info-circle'></i></abbr></a>

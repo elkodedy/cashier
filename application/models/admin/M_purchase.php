@@ -1,5 +1,5 @@
 <?php
-    class M_purchase_histori extends CI_Model{
+    class M_purchase extends CI_Model{
             
         function displayrecords(){
             // $query=$this->db->query("select * from table_stock");
@@ -13,11 +13,35 @@
         }
 
         function display_purchase_detail($id){
-            $this->db->select('tp.*, tpt.*, tm.*')
+            $this->db->select('tp.*, tpt.*, tm.*, tu.*, ts.*')
                       ->from('table_purchase tp')
                       ->join('table_purchase_transaction tpt', 'tp.purchase_transaction_id = tpt.purchase_transaction_id', 'left')
                       ->join('table_medicine tm', 'tp.medicine_id = tm.medicine_id', 'left')
+                      ->join('table_users tu', 'tu.user_id = tpt.user_id', 'left')
+                      ->join('table_suppliers ts', 'ts.supplier_id = tpt.supplier_id', 'left')
                       ->where('tp.purchase_transaction_id', $id);
+            $query = $this->db->get();
+            return $query->result();
+        }
+
+        function get_supplier(){
+            $this->db->select('ts.supplier_name, ts.supplier_id')
+                      ->from('table_suppliers ts');
+            $query = $this->db->get();
+            return $query->result();
+        }
+
+        function get_medicine_list(){
+            $this->db->select('tm.medicine_name, tm.medicine_code')
+                      ->from('table_medicine tm');
+            $query = $this->db->get();
+            return $query->result();
+        }
+
+        function get_medicine($code){
+            $this->db->select('tm.medicine_id')
+                      ->from('table_medicine tm')
+                      ->where('tm.medicine_code', $code);
             $query = $this->db->get();
             return $query->result();
         }

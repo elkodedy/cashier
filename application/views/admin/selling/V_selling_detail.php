@@ -20,9 +20,10 @@
 								<td><span>Tanggal : </span></td>
 							</tr>
 							<tr>
-								<td><h4 class="ml-3 border-bottom">TSX12423121</h4></td>
-								<td><h4 class="ml-3 border-bottom">Sarah Jelek</h4></td>
-								<td><h4 class="ml-3 border-bottom">20/12/2099</h4></td>
+                    <?php $i=1; foreach($sellingid as $head){} ?>
+                    <td><h4 class="ml-3 border-bottom"><?php echo $head->selling_transaction_number  ?></h4></td>
+                    <td><h4 class="ml-3 border-bottom"><?php echo $head->name ?></h4></td>
+                    <td><h4 class="ml-3 border-bottom"><?php echo date("Y-m-d h:i:s", $head->date)?></h4></td>
 							</tr>
             </table>
             <div class="table-responsive">
@@ -40,7 +41,7 @@
                 <tfoot>
                   <tr>
                     <th colspan="4">Total Harga (Rp)</th>
-                    <th colspan="1">50000,..</th>
+                    <th colspan="1"><?php echo 'Rp. '.number_format($head->total_price) ?></th>
                   </tr>
                 </tfoot>
                 <tbody>
@@ -50,7 +51,7 @@
                       <td><?php echo $row->medicine_code;?></td>
                       <td><?php echo $row->medicine_name;?></td>
                       <td><?php echo $row->selling_amount?></td>
-                      <td><?php echo $row->price;?></td>
+                      <td><?php echo 'Rp. '.number_format($row->price);?></td>
                     </tr>
                   <?php $i++; } ?>
                 </tbody>

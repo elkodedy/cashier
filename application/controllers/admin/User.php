@@ -118,6 +118,16 @@ class User extends CI_Controller {
 			$data['user_id'] = $this->input->post('user_id');
 			$data['registration_id'] = $this->input->post('registration_id');
 			$data['name'] = $this->input->post('name');
+			// $data['name'] = $_POST['name'];
+			// $d = array($data['name']);
+			// foreach($data['name'] as $key => $d){
+			// 	$d[$key] = $d;
+		
+			// }
+			// print_r($data['name']);break;
+			
+
+			// echo $data['name']; break;
 			$data['ktp_number'] = $this->input->post('ktp_number');
 			$data['phone'] = $this->input->post('phone');
 			$data['created_on'] = strtotime($this->input->post('created_on'));

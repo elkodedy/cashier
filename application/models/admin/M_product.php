@@ -6,8 +6,8 @@
             $this->db->select('tmc.*, tc.*, tm.*')
                       ->from('table_medicine tm')
                       ->join('table_medicine_category tmc', 'tmc.medicine_id = tm.medicine_id', 'left')
-                      ->join('table_category tc', 'tc.category_id = tmc.category_id', 'left');
-                    //   ->group_by('tm.medicine_name');
+                      ->join('table_category tc', 'tc.category_id = tmc.category_id', 'left')
+                      ->group_by('tm.medicine_name');
             $query = $this->db->get();
             return $query->result();
         } 
@@ -18,13 +18,15 @@
                       ->join('table_category tc', 'tc.category_id = tmc.category_id', 'left')
                       ->group_by('tm.medicine_name')
                       ->where('tm.medicine_id', $id);
-            // $query=$this->db->query("select * from table_stock");
-            // $this->db->select('tmc.*, tc.*, tm.*')
-            //           ->from('table_medicine_category tmc')
-            //           ->join('table_medicine tm', 'tm.medicine_id = tmc.medicine_id')
-            //           ->join('table_category tc', 'tc.category_id = tmc.category_id')
-            //           ->group_by('tm.medicine_name')
-            //           ->where('tm.medicine_id', $id);
+            $query = $this->db->get();
+            return $query->result();
+        }
+        function get_category($id){
+            $this->db->select('tmc.*, tc.*, tm.*')
+                      ->from('table_medicine tm')
+                      ->join('table_medicine_category tmc', 'tmc.medicine_id = tm.medicine_id', 'left')
+                      ->join('table_category tc', 'tc.category_id = tmc.category_id', 'left')
+                      ->where('tm.medicine_id', $id);
             $query = $this->db->get();
             return $query->result();
         }

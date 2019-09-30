@@ -26,6 +26,7 @@
                 <div class="form-group">
                   <div class="form-group">
                     <label for="medicine_code">Kode Produk</label>
+                    <?php date_default_timezone_set("Asia/Makassar"); ?>
                     <input type="text" id="medicine_code" name="medicine_code" class="form-control" placeholder="Masukan Kode Produk" readonly value="<?php echo ('OB'.time().rand(10,99)) ?>">
                   </div>
                 </div>

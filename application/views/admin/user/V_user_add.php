@@ -31,14 +31,14 @@
                 <div class="form-group">
                     <div class="form-group">
                       <label for="name">Nama</label>
-                      <input type="text" name="name" id="name" class="form-control" placeholder="Masukkan Nama" value="<?php echo set_value('name'); ?>">
+                      <input type="text" name="name[]" id="name" class="form-control" placeholder="Masukkan Nama" value="<?php echo set_value('name'); ?>">
                     </div>                                                
                     <span class='text-danger'><?php echo form_error('name'); ?></span>
                 </div>
                 <div class="form-group">
                     <div class="form-group">
-                      <label for="ktp_number">Nomor KTP</label>
-                      <input type="text" name="ktp_number" id="ktp_number" class="form-control" placeholder="Nomor KTP" value="<?php echo set_value('ktp_number'); ?>">
+                      <label for="name">Nomor KTP</label>
+                      <input type="text" name="name[]" id="ktp_number" class="form-control" placeholder="Nomor KTP" value="<?php echo set_value('ktp_number'); ?>">
                     </div>                                                
                     <span class='text-danger'><?php echo form_error('ktp_number'); ?></span>
                 </div>
