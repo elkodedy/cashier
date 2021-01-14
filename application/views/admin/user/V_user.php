@@ -6,9 +6,34 @@
           <li class="breadcrumb-item active">Pengguna</li>
         </ol>
 
+        <!-- baris 2 -->
+        <div class="row">
+          <div class="col-lg-12 col-sm-6 mb-3">
+            <div class="card text-white bg-info o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-user"></i>
+                </div>
+                <div class="display-4 font-weight-bold">
+                    <?php echo $users ?>
+                </div>
+                <div class="mr-5">Pengguna</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#"></a>
+            </div>
+          </div>
+        </div>
+
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">
+              <!-- <div class="card-body-icon">
+                <i class="fas fa-fw fa-user"></i>
+              </div>
+              <div class="display-4 font-weight-bold pb-3">
+                <i class="fas fa-table"></i>
+                Pengguna
+              </div> -->
             <i class="fas fa-table"></i>
             Pengguna
           </div>

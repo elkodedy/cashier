@@ -25,11 +25,9 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-light">
-        <div>
-            <h1><a href="<?php echo site_url('')?>" class="nav-link text-success">Apotik Jago</a></h1>
+    <!-- <nav class="navbar navbar-light">
+        <div class="row ml-lg-5 mt-2">
+            <img src="<?php echo base_url('assets/img/logo-apotek.png')?>" height="60" alt="" class="">
+            <h1><a href="<?php echo site_url('')?>" class="nav-link text-success" style="">Apotik Sehat</a></h1>
         </div>
-        <form class="form-inline col-2">
-            <a href="<?php echo site_url('/home/login')?>"><button class="btn btn-outline-success" type="button">LOGIN</button></a>
-        </form>
-    </nav>
+    </nav> -->

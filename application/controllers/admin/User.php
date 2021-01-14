@@ -6,12 +6,14 @@ class User extends CI_Controller {
     public function __construct(){
 		parent::__construct();
 		$this->load->model('admin/M_user');
+		$this->load->model('admin/M_home');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
 	}
 
 	public function index(){
 		$data['user'] = $this->M_user->displayrecords();
+		$data['users'] = $this->M_home->count_users();
 		$this->load->view('admin/V_header');
 		$this->load->view('admin/user/V_user', $data);
 		$this->load->view('admin/V_footer');

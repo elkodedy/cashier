@@ -1,10 +1,31 @@
-        <!-- Breadcrumbs-->
+     
+        
+         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="#">Admin</a>
           </li>
           <li class="breadcrumb-item active">Riwayat Pembelian</li>
-        </ol>
+        </ol>  
+
+        <!-- baris 2 -->
+        <div class="row">
+          <div class="col-lg-12 col-sm-6 mb-3">
+            <div class="card text-white bg-secondary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-shopping-cart"></i>
+                </div>
+                <div class="display-3 font-weight-bold">
+                  <span class="small">Rp. </span><?php $i=1; foreach($sum_purchase_transaction as $row){} ?>
+                    <?php echo number_format($row->total_price) ?>
+                </div>
+                <div class="mr-5">Total Pembelian</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('/admin/purchase/purchase_history')?>"></a>
+            </div>
+          </div>
+        </div>
 
         <!-- DataTables Example -->
         <div class="card mb-3">

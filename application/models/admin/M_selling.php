@@ -1,5 +1,5 @@
 <?php
-    class M_selling_histori extends CI_Model{
+    class M_selling extends CI_Model{
             
         function displayrecords(){
             // $query=$this->db->query("select * from table_stock");

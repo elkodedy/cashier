@@ -33,7 +33,7 @@
             background-color: DodgerBlue !important; 
             color: #ffffff; 
           }
-         </style>
+        </style>
         
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
@@ -100,7 +100,7 @@
                     <tfoot>
                       <tr class="border-top">
                         <th colspan="2"><button class="btn btn-primary" id="add_list" type="button"><i class='fa fa-plus-circle' onclick="addCart()"></i> Tambah Produk</button></th>
-                        <th colspan="2" class="" style="text-align: right; font-size: 30px;">Total : </th>
+                        <th colspan="1" class="" style="text-align: right; font-size: 30px;">Total : </th>
                         <th colspan="2">
                           <input autocomplete="off" type="number" name="" class="form-control" style="text-align: right; font-size: 30px;" readonly placeholder="" value="">
                         </th>
@@ -108,18 +108,18 @@
                       </tr>
                     </tfoot>
                     <tbody class="purchase-cart" id="purchase-cart">
-                      <tr id='cart-row0' class='cart-row'>
+                      <tr class='cart-row'>
                         <td>
                           <span class="cart-num">1.</span>
                         </td>
                         <td class="autocomplete myInput cart cart-medicine_code">
-                          <input autocomplete="off" id="autoInput" type="text" name="medicine_code[]" width="100%" class="form-control product-input autoInput" placeholder="Masukkan Kode/Nama Produk" value="" required>
+                          <input autocomplete="off" type="text" name="medicine_code[]" width="100%" class="form-control auto-input" placeholder="Masukkan Kode/Nama Produk" value="" required onkeyup="add_row_list($(this).parent().parent().index())">
                         </td>
-                        <td class="cart cart-medicine_name">
-                          <input autocomplete="off" type="text" name="medicine_name[]" class="form-control" placeholder="" value="">
+                        <td class="autocomplete myInput cart cart-medicine_name">
+                          <input autocomplete="off" type="text" name="medicine_name[]" class="form-control medicine-name" placeholder="" value="" readonly>
                         </td>
                         <td class="cart cart-single_purchase_price">
-                          <input autocomplete="off" type="number" name="single_purchase_price[]" class="form-control" placeholder="" value="" readonly>
+                          <input autocomplete="off" type="number" name="single_purchase_price[]" class="form-control" placeholder="" value="">
                         </td>
                         <td class="cart cart-purchase_amount">
                           <input autocomplete="off" type="number" name="purchase_amount[]" class="form-control" placeholder="" value="">
@@ -128,7 +128,7 @@
                           <input autocomplete="off" type="number" name="price[]" class="form-control" placeholder="" value="" readonly>
                         </td>
                         <td class="cart cart-button">
-                          <button class="btn btn-danger" type="button" onclick="delete_cart(0)"><abbr title="Hapus"><i class="fa fa-trash"></i></abbr></button>
+                          <button class="btn btn-danger" type="button" onclick="delete_cart($(this).parent().parent().index())"><abbr title="Hapus"><i class="fa fa-trash"></i></abbr></button>
                         </td>
                       </tr>
                       
@@ -152,8 +152,14 @@
 
         <script src="<?php echo base_url('assets/jquery/jquery.js') ?>"></script>
         <script>
-          var medicine_list = [<?php $i=1; foreach($medicine_list as $row){echo ('"'.$row->medicine_name.'",');} ?>];
-          
+          var medicine_code = [<?php $i=1; foreach($medicine_list as $row){echo ('"'.$row->medicine_code.'",');} ?>];
+          var medicine_name = [<?php $i=1; foreach($medicine_list as $row){echo ('"'.$row->medicine_name.'",');} ?>];
+         
+          function add_row_list(i){
+            console.log(i);
+            m_code = $('.auto-input')[i].value;
+            $('.medicine-name')[i].value = m_code;
+          }
         </script>
         <!-- --------------------------------------------------------------------- -->
         <script src="<?php echo base_url('assets/js/myjs.js') ?>"></script>

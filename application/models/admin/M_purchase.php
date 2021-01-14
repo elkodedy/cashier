@@ -45,4 +45,10 @@
             $query = $this->db->get();
             return $query->result();
         }
+
+        function get_medicine_like($code){
+            $this->db->query('select tm.* from table_medicine tm where tm.medicine_name like %"$code"% ');
+            $query = $this->db->get();
+            return $query->result();
+        }
     }

@@ -5,12 +5,34 @@
   </li>
   <li class="breadcrumb-item active">Supplier</li>
 </ol>
+<!-- Icon Cards-->
+<div class="row">
+  <div class="col-lg-12 col-sm-6 mb-3">
+    <div class="card text-white bg-warning o-hidden h-100">
+      <div class="card-body">
+        <div class="card-body-icon">
+          <i class="fas fa-fw fa-handshake"></i>
+        </div>
+        <div class="display-4 font-weight-bold	">
+          <?php echo $suppliers ?>
+        </div>
+        <div class="mr-5">Supplier</div>
+      </div>
+      <a class="card-footer text-white clearfix small z-1" href="%"></a>
+    </div>
+  </div>
+</div>
 
 <!-- DataTables Example -->
 <div class="card mb-3">
   <div class="card-header">
-    <i class="fas fa-table"></i>
-    Supplier
+    <!-- <div class="card-body-icon">
+      <i class="fas fa-fw fa-handshake"></i>
+    </div> -->
+    <!-- <div class="display-4 font-weight-bold pb-3"> -->
+      <i class="fas fa-table"></i>
+      Supplier
+    <!-- </div> -->
   </div>
   <div class="card-body">
     <div class="table-responsive">

@@ -6,6 +6,25 @@
           <li class="breadcrumb-item active">Stok Obat</li>
         </ol>
 
+        <!-- Icon Cards-->
+        <div class="row">
+          <div class="col-xl-12 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-warehouse"></i>
+                </div>
+                <div class="display-3 font-weight-bold">
+                <?php $i=1; foreach($stockk as $row){} ?>
+                  <?php echo $row->stock ?>
+                </div>
+                <div class="mr-5">Stok Produk</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="<?php echo site_url('/admin/stock')?>"></a>
+            </div>
+          </div>
+        </div>
+
         <!-- DataTables Example -->
         <div class="card mb-3">
           <div class="card-header">

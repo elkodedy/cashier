@@ -7,6 +7,7 @@ class Purchase extends CI_Controller {
     {
 		parent::__construct();
 		$this->load->model('admin/M_purchase');
+		$this->load->model('admin/M_home');
 	}
 
 	public function index() 
@@ -48,6 +49,7 @@ class Purchase extends CI_Controller {
 	public function purchase_history()
 	{
 		$data['purchase_history'] = $this->M_purchase->displayrecords();
+		$data['sum_purchase_transaction'] = $this->M_home->sum_purchase_transaction();
 		$this->load->view('admin/V_header');
 		$this->load->view('admin/purchase/V_purchase_history', $data);
 		$this->load->view('admin/V_footer');
